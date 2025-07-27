@@ -1,0 +1,69 @@
+/* Define colors */ /* {{{ */
+@define-color caution     #45475a;
+@define-color performance #f5c2e7;
+@define-color audio       #cba6f7;
+@define-color date        #a6e3a1;
+@define-color window      #b4befe;
+/* }}} */
+
+/* Reset all styles */ /* {{{ */
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 12pt;
+  font-weight: 500;
+} /* }}} */
+
+/* Main bar defaults */ /* {{{ */
+#waybar.main {
+    background: transparent;
+}
+
+#waybar.main * {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+/* }}} */
+
+/* Module colors */ /* {{{ */
+#waybar.main #cpu,
+#waybar.main #memory.ram {
+  color: @performance;
+}
+
+#waybar.main #pulseaudio {
+  color: @audio;
+}
+
+#waybar.main #custom-spacer_left,
+#waybar.main #custom-spacer_right,
+#waybar.main #pulseaudio.output.muted,
+#waybar.main #pulseaudio.input.source-muted {
+  color: @caution;
+}
+
+#waybar.main #clock {
+  color: @date;
+}
+
+#waybar.main #workspaces button.active,
+#waybar.main #workspaces button.visible,
+#waybar.main #window {
+  color: @window;
+}
+/* }}} */
+
+
+/* Default workspace settings */
+#waybar.main #workspaces button {
+  color: @caution;
+  border: 1.5px solid transparent;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+
+/* Focused workspace & monitor */
+#waybar.main #workspaces button.active {
+  border: 1.5px solid @caution;
+}
