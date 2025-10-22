@@ -99,3 +99,6 @@ ctrl - left : yabai -m space --focus prev
 
 # Open Terminal
 # cmd - return : open /Applications/kitty.app
+
+# Restart Yabai
+ctrl + lalt + cmd - r : yabai --restart-service
